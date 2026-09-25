@@ -1,17 +1,21 @@
-FROM gcc:4.9
+FROM ubuntu:24.04
+ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
-        git \
+        build-essential \
+        gcc \
         curl \
-        tree \
-        less \
-        nano \
-        man-db \
+        make \
+        valgrind \
+        clang \
         manpages \
+        git \
         lowdown \
+        gdb
     && rm -rf /var/lib/apt/lists/*
 
 RUN useradd -m -s /bin/bash pse 
-
-USER pse 
+WORKDIR /workspace
+USER pse
+CMD ["/bin/bash"]
