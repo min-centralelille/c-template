@@ -17,7 +17,7 @@ RUN apt-get update && \
 
 RUN useradd -m -s /bin/bash pse
 RUN usermod -aG sudo pse
-RUN echo "pse ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/pse && chmod 0440 /etc/sudoers.d/pse
+#RUN echo "pse ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/pse && chmod 0440 /etc/sudoers.d/pse
 WORKDIR /workspace
 USER pse
 CMD ["/bin/bash"]
