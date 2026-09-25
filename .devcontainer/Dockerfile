@@ -12,7 +12,7 @@ RUN apt-get update && \
         manpages \
         git \
         lowdown \
-        gdb
+        gdb \
     && rm -rf /var/lib/apt/lists/*
 
 RUN useradd -m -s /bin/bash pse
